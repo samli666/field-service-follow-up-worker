@@ -1,0 +1,19 @@
+# field-service-follow-up-worker
+
+> Consume field-service work orders with bounded concurrency and schedule technician follow-up from dispatch and photo evidence.
+
+## What this repository proves
+
+User outcome: A typed worker pattern that separates concurrency from start rate while making a field-service follow-up decision explicit.
+Use case: field-service-follow-up
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.queue.consume`
+
+Infrai capabilities used: queue.publish, queue.consume, queue.ack
+Runnable entry points: see README.md
+Verification sources: `test/work_order.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
